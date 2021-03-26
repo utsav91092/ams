@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS team;
+
+CREATE TABLE team (
+  id BIGINT AUTO_INCREMENT  PRIMARY KEY,
+  team_name VARCHAR(250) NOT NULL
+);
+
+DROP TABLE IF EXISTS developer;
+
+CREATE TABLE developer (
+  id BIGINT AUTO_INCREMENT  PRIMARY KEY,
+  full_name VARCHAR(250) NOT NULL,
+  phone_number VARCHAR(20) NOT NULL,
+  team_id BIGINT,
+  FOREIGN KEY (team_id) REFERENCES team(id)
+);
